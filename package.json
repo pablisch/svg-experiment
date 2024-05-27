@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "svgr": "svgr -d raw comp"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,8 @@
   "devDependencies": {
     "@svgr/cli": "^8.1.0",
     "rimraf": "^5.0.7"
+  },
+  "dependencies": {
+    "@svgr/core": "^8.1.0"
   }
 }
