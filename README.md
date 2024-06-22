@@ -1,5 +1,24 @@
 # SVG to React component
 
+## Quick Start
+
+Clone the repository and run `npm install` to install the dependencies.
+Put the svg file you want to convert into the `raw` directory.
+```bash
+npx @svgr/cli -- <source-path>/<filename>.svg > <destination-path>/<filename>.js
+```
+**NOTE:** Use `.jsx` as the file extension for Vite React components, e.g.
+```bash
+npx @svgr/cli -- raw/tubeMap.svg > comp/tubeMap.jsx
+```
+The resulting React component should be ready to use in the `comp` directory.
+Perform any edits that are needed, e.g. in the case of this app:
+- Ensure the extension is the required `.js` or `.jsx`.
+- Delete the `xmlns` code at the start and end of the file.
+- Change the `height` attribute in the `svg` tag.
+- Delete `metadata` code at the end of the file.
+- Search and replace all `5tati0n_` with `''`.
+
 ## Purpose
 
 This experiment is part of exploring the use of SVG files in React following the problems of using the huge TfL London Underground map SVG file, first in the original LUPO and then in an update using Vite React. Most conversion tools and standard methods of using SVG files do not seem to work. I was aware than this was a big problem in the original LUPO project and am not sure how Sam resolved it.
