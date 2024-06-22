@@ -89,6 +89,10 @@ e.g.
 ```bash
 npx @svgr/cli -- raw/tube.svg > comp/tube.js
 ```
+OR 
+```bash
+npx @svgr/cli -- raw/tubeEdit18.svg > comp/tubeEdit18.js
+```
 
 Then search and replace all `5tati0n_` with `''` in the `tube.js` file. This will restore the `id` attributes to their original values. 
 **NOTE** the `_` added to whatever is used as the prefix value which is the specified delimiter.
@@ -96,5 +100,109 @@ Then search and replace all `5tati0n_` with `''` in the `tube.js` file. This wil
 The above worked in tests and when used on the original LUPO SVG file, could be thrown straight into the LUPO app and worked as a direct replacement for the `Tube.svg` file been currently used.
 
 It is not clear yet whether there is any advantage in using a converted file over maintaining the SVG integrity. I suspect that losing the ability to open the file in an svg editor is a disadvantage.
+
+## Personal record of tube map inputs
+
+**Tube.svg** is the original LUPO SVG file. 
+
+**Tube-july-2021.svg** is the original file from which the `Tube.svg` LUPO map file was created.
+
+**tubemap2.svg** is a new tube map SVG file that I downloaded from the internet. Unfortunately, I did not record the source at the time. It appears to have quite a different structure to the LUPO SVG file and uniquely of all the tube svgs that I have seen, it inlcudes text references to the station names.
+
+**tubemap.svg** is similar to above but does not contain any text references to the station names meaning using it would be a back to quare one situation.
+
+**tubemap-names.svg** is a copy of **tubemap2.svg**.
+
+## Notes on Tube Map tests
+
+**tubemap-names.svg** produced a map component that was immeadiately usuable with marked names for stations in such a way that it would be easy to substitute names if desired. It does contain a lot of unwanted tube lines and stations and so would require a lot of additional work.
+
+Through various edits of this file in Inkscape, I found that saving work, even as a plain SVG added code to the file that caused errors in React. For the time being, the solution is to comment out some code.
+
+### At the start of the file
+
+```javascript
+const Tube = (props) => (
+<svg
+    // xlink="http://www.w3.org/1999/xlink"
+    width={3015}
+    height={1000}
+    viewBox="55 130 1005 670"
+    xmlSpace="preserve"
+    id="svg2079"
+    xmlns="http://www.w3.org/2000/svg"
+    // xmlns:svg="http://www.w3.org/2000/svg"
+    // xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    // xmlns:cc="http://creativecommons.org/ns#"
+    // xmlns:dc="http://purl.org/dc/elements/1.1/"
+    {...props}
+  >
+```
+
+### At the end of the file
+
+```javascript
+    <metadata id="metadata2079">
+      {/* <rdf:RDF>
+        <cc:Work rdf:about="">
+          <dc:title>
+            {
+              "Transport for London railway service status diagram (31st May, 2015)"
+            }
+          </dc:title>
+        </cc:Work>
+      </rdf:RDF> */}
+    </metadata>
+);
+export default Tube;
+```
+
+## Process for converting a tube map SVG to usuable React component
+
+1. Bring the SVG file into the `raw` directory.
+2. Run the command to convert the file to a React component in the `comp` directory, e.g. `npx @svgr/cli -- raw/tube.svg > comp/tube.js`.
+3. Edit the `comp/tube.js` file for use in Vite React:
+    - Change the file extension from `.js` to `.jsx`.
+    - Delete the `xmlns` code at the start and end of the file as shown below.
+    - Change the `height` attribute in the `svg` tag.
+    - Delete `metadata` code at the end of the file as shown below.
+    - Search and replace all `5tati0n_` with `''`.
+    - Remove `Svg` from the component name, e.g. `const SvgTube` to `const Tube` in declaration and export.
+
+
+**Delete** the `xmlns` attributes that show in white rather than purple in VS Code near the start of the file. They are not needed and cause errors in React.
+```javascript
+<svg
+  xlink="http://www.w3.org/1999/xlink"
+  width={3015}
+  height={1000} // Latest edit found 1000 to be optimal from the original 2010 value
+  viewBox="55 130 1005 670"
+  xmlSpace="preserve"
+  id="5tati0n_svg2079"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  {...props}
+>
+```
+
+**Delete** the `metadata` section usually near to the end of the file.
+```javascript
+<metadata id="5tati0n_metadata2079">
+  <rdf:RDF>
+    <cc:Work rdf:about="">
+      <dc:title>
+        {
+          "Transport for London railway service status diagram (31st May, 2015)"
+        }
+      </dc:title>
+    </cc:Work>
+  </rdf:RDF>
+</metadata>
+```
+
+**Find and Replace** all `5tati0n_` with `''`.
 
 
