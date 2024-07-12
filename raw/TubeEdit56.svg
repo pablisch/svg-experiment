@@ -7,7 +7,7 @@
    xml:space="preserve"
    version="1.1"
    id="svg2079"
-   sodipodi:docname="TubeEdit55.svg"
+   sodipodi:docname="TubeEdit56.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,15 +24,15 @@
    inkscape:pageopacity="0.0"
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
-   inkscape:zoom="0.80332839"
-   inkscape:cx="1549.1797"
-   inkscape:cy="720.75133"
+   inkscape:zoom="4.6149831"
+   inkscape:cx="777.79266"
+   inkscape:cy="1225.79"
    inkscape:window-width="3360"
    inkscape:window-height="1837"
    inkscape:window-x="0"
    inkscape:window-y="25"
    inkscape:window-maximized="0"
-   inkscape:current-layer="HammersithCityLocTabs"
+   inkscape:current-layer="PiccadillyLocTabs"
    showguides="true" /><defs
    id="defs2079"><linearGradient
    id="swatch1"><stop
@@ -1559,6 +1559,22 @@
    height="1.6"
    class="style4"
    id="GloucesterRoadLocPiccadilly"
+   style="display:inline"
+   transform="translate(92.32999,114.3371)" /><rect
+   x="337.89999"
+   y="531.79999"
+   width="1.6"
+   height="1.6"
+   class="style4"
+   id="BaronsCourtLocPiccadilly"
+   style="display:inline"
+   transform="translate(92.32999,114.3371)" /><rect
+   x="254.10001"
+   y="535.79999"
+   width="1.6"
+   height="1.6"
+   class="style4"
+   id="TurnhamGreenLocPiccadilly"
    style="display:inline"
    transform="translate(92.32999,114.3371)" /></g>
 	</g><g
@@ -3283,7 +3299,14 @@
    x2="354.89999"
    y2="541.79999"
    class="style26"
-   id="line549" />
+   id="line549" /><rect
+   x="254.10001"
+   y="543"
+   width="1.6"
+   height="1.6"
+   class="style29"
+   id="TurnhamGreenLocDistrict"
+   style="display:inline" />
 		          
 		<rect
    x="942.29999"
@@ -3352,32 +3375,7 @@
    height="1.6"
    class="style29"
    id="ChiswickParkLocDistrict" />
-		<g
-   id="TurnhamGreenLocContainer">
-			<rect
-   x="254.10001"
-   y="535.79999"
-   width="1.6"
-   height="1.6"
-   class="style4"
-   id="TurnhamGreenLocPiccadilly" />
-			<rect
-   x="254.10001"
-   y="543"
-   width="1.6"
-   height="1.6"
-   class="style29"
-   id="TurnhamGreenLocDistrict" />
-		</g> <g
-   id="BaronsCourtLocContainer">
-			<rect
-   x="337.89999"
-   y="531.79999"
-   width="1.6"
-   height="1.6"
-   class="style4"
-   id="BaronsCourtLocPiccadilly" />
-			<rect
+		 <rect
    x="337.89999"
    y="539.09998"
    width="1.6"
@@ -3385,7 +3383,6 @@
    class="style29"
    id="BaronsCourtLocDistrict"
    style="display:inline" />
-		</g>
 		<rect
    x="354.89999"
    y="543"

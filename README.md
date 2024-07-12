@@ -110,7 +110,7 @@ npx @svgr/cli -- raw/tube.svg > comp/tube.js
 ```
 OR 
 ```bash
-npx @svgr/cli -- raw/tubeEdit18.svg > comp/tubeEdit18.js
+npx @svgr/cli -- raw/tubeEdit18.svg > comp/tubeEdit18.jsx
 ```
 
 Then search and replace all `5tati0n_` with `''` in the `tube.js` file. This will restore the `id` attributes to their original values. 
